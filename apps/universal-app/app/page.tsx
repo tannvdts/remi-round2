@@ -1,5 +1,6 @@
 'use client';
 
+import ListPost from "../components/list-post";
 import { PostEntity } from "../types/entities/post.entity";
 
 const getData = async () => {
@@ -8,7 +9,8 @@ const getData = async () => {
   return (result || []) as PostEntity[];
 }
 
-export default async function Index() {
+export default async function Home() {
+  const listPost = await getData();
   return (
     <div>
       <header className="bg-white shadow">
@@ -19,6 +21,9 @@ export default async function Index() {
       <main>
         <div className="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
           Hello
+          <div>
+            <ListPost />
+          </div>
         </div>
       </main>
     </div>
