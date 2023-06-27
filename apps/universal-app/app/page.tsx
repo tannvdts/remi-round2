@@ -1,11 +1,14 @@
 'use client';
 
+import { PostEntity } from "../types/entities/post.entity";
+
+const getData = async () => {
+  const response = await fetch('http://localhost:3000/posts');
+  const result = await response.json();
+  return (result || []) as PostEntity[];
+}
+
 export default async function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.styled-components file.
-   */
   return (
     <div>
       <header className="bg-white shadow">

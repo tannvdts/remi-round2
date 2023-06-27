@@ -16,7 +16,9 @@
         "name": "next"
       }
     ],
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true
   },
   "include": [
     "**/*.ts",
